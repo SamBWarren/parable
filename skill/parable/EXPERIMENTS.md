@@ -61,16 +61,19 @@ shipping defect that exactly one of the agents caught. Every contradiction
 between agents marked a real finding; two agents each confidently declared
 "exact / clean" the very code a peer had flagged.
 
-Cost, with context: the measured ~670k agent tokens covered the **entire
-experiment**, not just the ensemble — it included the solo control arm run
-for comparison, and every one of the six seats ran the most expensive model
-available (this run predates the model-per-seat policy in `PROMPTING.md`).
-A production run of the protocol is three workers + one adjudicator, can mix
-cheaper-model members for error diversity, and skips the adjudicator
-entirely when the workers converge (the unanimity shortcut) — all of which
-cut the bill, though their effect on recall is unmeasured. It is still the
-most expensive move in this skill set: spend it only where being wrong is
-expensive (that is what the triage table is for).
+Cost, with the exact split (recovered from the session records): the often-
+quoted ~670k agent tokens covered the **entire two-round experiment**, not
+the ensemble. The ensemble itself — three workers (134k, 121k, 109k) + one
+adjudicator (100k) — cost **~464k tokens and ~11 minutes wall-clock**
+(workers run in parallel, ~6 min; adjudication ~4 min). The rest was
+experiment overhead: the solo control arm (124k, the 4/6 result) and an
+agent from a separate earlier round (82k). Every seat ran the most
+expensive model available (this predates the model-per-seat policy in
+`PROMPTING.md`); mixed cheaper-model members and the unanimity shortcut
+(skip the adjudicator when workers converge) cut the bill further, though
+their effect on recall is unmeasured. It is still the most expensive move
+in this skill set: spend it only where being wrong is expensive (that is
+what the triage table is for).
 
 **3. Planning briefs: 4/4 below the bar → 4/4 at the bar in ≤3 ratchet rounds.**
 Four design-brief tasks started below the frontier baseline. Two ratchet

@@ -125,13 +125,13 @@ disagreements are the decisions that matter.
 | Mechanism unknown, feel/UX regression, failed prior fix, audit, expensive-if-wrong | ENSEMBLE |
 
 ## Honest limits
-- Cost: the ensemble is the expensive tool. The measured ~670k agent tokens
-  behind the 6/6 result covered the whole experiment (including a solo
-  control arm), with every seat on the most expensive model — a production
-  run (3 workers + adjudicator, cheaper-model members, the unanimity
-  shortcut) costs meaningfully less, but it is still the priciest move in
-  this repo. Spend it on problems that deserve it (the triage table exists
-  for this).
+- Cost: the ensemble is the expensive tool. The 6/6 ensemble itself measured
+  **~464k agent tokens, ~11 minutes wall-clock** (3 workers in parallel +
+  adjudicator, every seat on the most expensive model); the oft-quoted ~670k
+  was the whole experiment including its control arms. Cheaper-model members
+  and the unanimity shortcut cut it further, but it is still the priciest
+  move in this repo. Spend it on problems that deserve it (the triage table
+  exists for this).
 - The system finds what QUESTIONS can reach. Truly novel moves still favor
   stronger models — but the ratchet converts each one, once seen, into a
   question any model can ask forever after.
