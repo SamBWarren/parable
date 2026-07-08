@@ -59,9 +59,18 @@ The best single agent among the ensemble found 3 of 6. **Three independent
 scaffolded agents + an adjudicator found 6 of 6** — including one real
 shipping defect that exactly one of the agents caught. Every contradiction
 between agents marked a real finding; two agents each confidently declared
-"exact / clean" the very code a peer had flagged. Cost: ~670k agent tokens
-across six agents — spend it only where being wrong is expensive (that is
-what the triage table is for).
+"exact / clean" the very code a peer had flagged.
+
+Cost, with context: the measured ~670k agent tokens covered the **entire
+experiment**, not just the ensemble — it included the solo control arm run
+for comparison, and every one of the six seats ran the most expensive model
+available (this run predates the model-per-seat policy in `PROMPTING.md`).
+A production run of the protocol is three workers + one adjudicator, can mix
+cheaper-model members for error diversity, and skips the adjudicator
+entirely when the workers converge (the unanimity shortcut) — all of which
+cut the bill, though their effect on recall is unmeasured. It is still the
+most expensive move in this skill set: spend it only where being wrong is
+expensive (that is what the triage table is for).
 
 **3. Planning briefs: 4/4 below the bar → 4/4 at the bar in ≤3 ratchet rounds.**
 Four design-brief tasks started below the frontier baseline. Two ratchet
